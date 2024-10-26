@@ -52,19 +52,38 @@ cat > .openapi-generator-config.json << EOL
 EOL
 
 # Add scripts to package.json
-cat >> package.json << EOL
-{
-"scripts": {
-"generate-api": "openapi-generator-cli generate -i http://localhost:8080/v3/api-docs -g typescript-axios -o src/generated --config .openapi-generator-config.json"
-}
-}
-EOL
 
 ### Modify this for the nx repo in the shared-api lib
 ```json
 {
 "scripts": {
+  "generate-api": "openapi-generator-cli generate -i http://localhost:8080/q/openapi/ -g typescript-axios -o src/generated --config .openapi-generator-config.json",
 "generate-shared-api": "openapi-generator-cli generate -i http://localhost:8080/q/openapi/ -g typescript-axios -o libs/shared-api/src --config .openapi-generator-config.json"
 }
 }
+```
+
+### project startup
+
+We need to add the port as it's not on a reverse proxy
+Replace the port on react-app/libs/shared-api/src/base.ts
+Enable Cors
+
+> export const BASE_PATH = "http://localhost:8080"
+
+
+```bash
+#on server project
+quarkus dev
+#on frontend project
+nx run react-app:serve
+```
+
+
+TADAAAA!
+
+### render fruits
+
+```md
+I want to generate a tailwind component in FruitList that renders all the fruits from the server
 ```

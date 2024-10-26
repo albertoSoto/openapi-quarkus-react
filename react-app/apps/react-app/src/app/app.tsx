@@ -1,9 +1,9 @@
-import NxWelcome from './nx-welcome';
+import FruitList from './components/FruitList';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="react-app" />
+      <FruitList/>
     </div>
   );
 }
