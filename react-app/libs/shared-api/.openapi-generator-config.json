@@ -1,0 +1,7 @@
+{
+  "apiPackage": "api",
+  "modelPackage": "models",
+  "supportsES6": true,
+  "withSeparateModelsAndApi": true,
+  "useSingleRequestParameter": true
+}
