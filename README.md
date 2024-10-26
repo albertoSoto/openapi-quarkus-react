@@ -1,1 +1,1 @@
-# openapi-spring-react
+# openapi-quarkus-react
