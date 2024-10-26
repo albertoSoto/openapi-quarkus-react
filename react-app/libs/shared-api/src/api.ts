@@ -13,6 +13,7 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+export * from './api/fruit-resource-api';
+export * from './api/greeting-resource-api';
+

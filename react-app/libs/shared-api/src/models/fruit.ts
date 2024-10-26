@@ -13,6 +13,24 @@
  */
 
 
-export * from "./api";
-export * from "./configuration";
-export * from "./models";
+
+/**
+ * 
+ * @export
+ * @interface Fruit
+ */
+export interface Fruit {
+    /**
+     * 
+     * @type {string}
+     * @memberof Fruit
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Fruit
+     */
+    'description'?: string;
+}
+

@@ -1,0 +1,13 @@
+.gitignore
+.npmignore
+.openapi-generator-ignore
+api.ts
+api/fruit-resource-api.ts
+api/greeting-resource-api.ts
+base.ts
+common.ts
+configuration.ts
+git_push.sh
+index.ts
+models/fruit.ts
+models/index.ts
