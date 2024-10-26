@@ -16,7 +16,7 @@ cd openapi-backend
 quarkus dev
 #http://localhost:8080/q/dev-ui/configuration-form-editor
 #http://localhost:8080/q/dev-ui/dependencies-application-dependencies
-#http://localhost:8080/q/openapi/
+#see -> http://localhost:8080/q/openapi/
 ```
 
 
@@ -36,6 +36,9 @@ cd react-app/libs/shared-api
 
 ```
 
+## Introducing open api generator 
+
+In the root of the nx project, we can do the following:
 
 # Add OpenAPI Generator configuration
 cat > .openapi-generator-config.json << EOL
@@ -56,3 +59,12 @@ cat >> package.json << EOL
 }
 }
 EOL
+
+### Modify this for the nx repo in the shared-api lib
+```json
+{
+"scripts": {
+"generate-shared-api": "openapi-generator-cli generate -i http://localhost:8080/q/openapi/ -g typescript-axios -o libs/shared-api/src --config .openapi-generator-config.json"
+}
+}
+```

@@ -2,7 +2,10 @@
   "name": "@react-app/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "generate-api": "openapi-generator-cli generate -i http://localhost:8080/q/openapi/ -g typescript-axios -o src/generated --config .openapi-generator-config.json",
+    "generate-shared-api": "openapi-generator-cli generate -i http://localhost:8080/q/openapi/ -g typescript-axios -o libs/shared-api/src --config .openapi-generator-config.json"
+  },
   "private": true,
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^2.15.0",
